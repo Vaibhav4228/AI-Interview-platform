@@ -23,8 +23,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
-import { CircleCheck, Star } from "lucide-react";
+import { ArrowLeft, CircleCheck, Star } from "lucide-react";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export const Feedback = () => {
   const { interviewId } = useParams<{ interviewId: string }>();
@@ -107,6 +108,18 @@ export const Feedback = () => {
 
   return (
     <div className="flex flex-col w-full gap-8 py-5">
+      <div className="flex items-center gap-4">
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => navigate("/generate")}
+          className="flex items-center gap-2"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Back to Dashboard
+        </Button>
+      </div>
+      
       <div className="flex items-center justify-between w-full gap-2">
         <CustomBreadCrumb
           breadCrumbPage={"Feedback"}

@@ -8,7 +8,8 @@ import { db } from "@/config/firebase.config";
 import { CustomBreadCrumb } from "@/components/custom-bread-crumb";
 
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Lightbulb } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft, Lightbulb } from "lucide-react";
 import { QuestionSection } from "@/components/question-section";
 
 export const MockInterviewPage = () => {
@@ -56,6 +57,18 @@ export const MockInterviewPage = () => {
 
   return (
     <div className="flex flex-col w-full gap-8 py-5">
+      <div className="flex items-center gap-4">
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => navigate("/generate")}
+          className="flex items-center gap-2"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Back to Dashboard
+        </Button>
+      </div>
+      
       <CustomBreadCrumb
         breadCrumbPage="Start"
         breadCrumpItems={[

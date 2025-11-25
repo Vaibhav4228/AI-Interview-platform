@@ -7,7 +7,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { LoaderPage } from "./loader-page";
 import { CustomBreadCrumb } from "@/components/custom-bread-crumb";
 import { Button } from "@/components/ui/button";
-import { Lightbulb, Sparkles, WebcamIcon } from "lucide-react";
+import { ArrowLeft, Lightbulb, Sparkles, WebcamIcon } from "lucide-react";
 import { InterviewPin } from "@/components/pin";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import WebCam from "react-webcam";
@@ -57,6 +57,18 @@ export const MockLoadPage = () => {
 
   return (
     <div className="flex flex-col w-full gap-8 py-5">
+      <div className="flex items-center gap-4">
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => navigate("/generate")}
+          className="flex items-center gap-2"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Back to Dashboard
+        </Button>
+      </div>
+      
       <div className="flex items-center justify-between w-full gap-2">
         <CustomBreadCrumb
           breadCrumbPage={interview?.position || ""}
